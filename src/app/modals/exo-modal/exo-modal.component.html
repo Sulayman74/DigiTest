@@ -1,0 +1,24 @@
+<section>
+  <form id="formulaire-modal" [formGroup]="formModal" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Rue</mat-label>
+      <input id="localite" type="text" matInput formControlName="rue" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>ZipCode</mat-label>
+      <input id="localite" type="text" matInput formControlName="codePostale" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Ville</mat-label>
+      <input id="localite" type="text" matInput formControlName="ville" />
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="accent"
+      type="submit"
+      [disabled]="formModal.invalid"
+    >
+      Valider
+    </button>
+  </form>
+</section>

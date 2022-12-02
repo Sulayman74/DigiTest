@@ -1,0 +1,77 @@
+<section class="container-fluid">
+  <!-- <div class="user">
+     <div>{{ dataUser | json }}</div> 
+    <div>{{ dataUser.id }}</div>
+    <div>{{ dataUser.first_name }}</div>
+    <div>{{ dataUser.last_name }}</div>
+    <div>{{ dataUser.email }}</div>
+    <img [src]="dataUser.avatar" />
+  </div> -->
+
+  <section class="main-container">
+    <div *ngFor="let user of dataAPI">
+      <app-card class="card" [dataUSer]="user"></app-card>
+    </div>
+    <div class="next_content">
+      <h1 class="text-primary">Hello World!!</h1>
+      <!-- <img [src]="image" alt=""> -->
+      <div
+        class="content"
+        [ngStyle]="{
+          background: title === 'Mon test' ? changeColor('purple') : null
+        }"
+      >
+        <div>{{ title }}</div>
+      </div>
+    </div>
+
+    <ul>
+      <button (click)="onClick()">click me</button>
+    </ul>
+
+    <ul>
+      <li
+        *ngFor="
+          let item of monTableau;
+          let index = index;
+          let isFirst = first;
+          let isOdd = odd
+        "
+      >
+        {{ item }} {{ index }} {{ isFirst }} {{ isOdd }}
+      </li>
+    </ul>
+
+    <div [ngStyle]="{ color: title === 'Mon test' ? 'red' : 'blue' }">
+      Je suis rouge ou bleu
+    </div>
+
+    <!-- <div *ngFor="let item of tableauMohammed">
+    <app-card [data]="item" ></app-card>
+</div> -->
+
+    <div
+      *ngFor="
+        let chiffre of numbers;
+        let isFirst = first;
+        let isOdd = odd;
+        let isEven = even;
+        let index = index
+      "
+    >
+      <!-- {'color: chiffre%2 == 0 ? 'red' : 'green'}pour chaque element du tableau on cherche le pair et l'impair-->
+      <!-- <app-exo-components
+        [nombre]="chiffre"
+        [ngStyle]="{
+          color: isEven ? 'white' : 'black',
+          'font-size': isOdd ? '2em' : '1em'
+        }"
+      >
+      </app-exo-components> -->
+    </div>
+    <!-- $event paramètre obligatoire dans ma méthode ici -->
+    <!-- <app-exo-components (monTest)="changeState($event)"></app-exo-components> -->
+
+    <div *ngIf="newTest">Je suis là</div>
+  </section>
+</section>

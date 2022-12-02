@@ -1,0 +1,23 @@
+<section>
+  <mat-card>
+    <mat-card-title> Meteo</mat-card-title>
+
+    <mat-card-content *ngIf="meteo">
+      <p>{{ meteo.rue }}</p>
+      <p>{{ meteo.codePostale }}</p>
+      <p>{{ meteo.ville }}</p>
+      <p>{{ meteo.temperature }}</p>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button
+        mat-raised-button
+        color="accent"
+        type="button"
+        (click)="openModal()"
+      >
+        <mat-icon>home</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</section>

@@ -1,0 +1,30 @@
+<p>hello works!</p>
+
+<div *ngFor="let item of footBall">
+  <!-- <app-chat [ballonOr]="item">
+    </app-chat> -->
+
+  <app-chat [ballonOr]="item" (myJob)="getData($event)"> </app-chat>
+</div>
+
+<!-- ** Pour debugger ma console et faire comprendre à mon script que quand j'ai déclaré "monPost", ici je lui dit qu'il existe avec une directive ngIf si il existe et si .skill est présent -->
+
+<div *ngIf="monPost && monPost.skill">
+  <div>{{ monPost.skill }}</div>
+  <div>{{ monPost.id }}</div>
+  <div>{{ monPost.name }}</div>
+</div>
+<p>{{ isOverComponent }}</p>
+
+<button mat-raised-button color="primary" (click)="onClick()">Send</button>
+
+<!-- ! ennoncé de l'exo -->
+<!-- on revoit le transfère parent enfant / enfant parent
+- on genere un component hello, toujours dans le repertoire components/
+- on genere un autre component chat , toujours dans components/
+- hello est le parent de chat
+- il faut transferer des données de hello à chat :
+--[{mark:'henry', name: 'titi', bOr :'KB9'}]
+je veux passer ces data de hello à chat 
+chat va transferer des données à hello
+-- skill : 'UX', id : 3, name : jojo -->

@@ -1,0 +1,16 @@
+section {
+  height: 80vh;
+  width: 100%;
+  .card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border: none;
+    padding: 5px 0;
+    margin: 10px 0;
+  }
+  .font-size {
+    font-size: 2em;
+  }
+}

@@ -1,0 +1,16 @@
+section {
+  #localite {
+    padding: auto;
+  }
+  #formulaire-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: antiquewhite;
+    color: darkblue;
+  }
+  button {
+    margin: 10px;
+  }
+}

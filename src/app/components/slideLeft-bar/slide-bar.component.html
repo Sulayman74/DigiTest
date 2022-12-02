@@ -1,0 +1,18 @@
+<form action="" [formGroup]="userForm">
+  <mat-form-field>
+    <input
+      type="text"
+      matInput
+      [matAutocomplete]="auto"
+      formControlName="pays"
+    />
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+      <mat-option
+        *ngFor="let option of filteredOptions | async"
+        [value]="option"
+      >
+        {{ option }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>

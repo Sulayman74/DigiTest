@@ -1,0 +1,36 @@
+.card {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // flex-flow: column wrap;
+  background-color: darkorange;
+
+  #infos {
+    padding: 10px 0;
+    margin: 5px 0px;
+    font-size: large;
+    text-align: center;
+    font-weight: 600;
+    filter: drop-shadow(3px 1px 3px white);
+  }
+  .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #image {
+    border-radius: 30px;
+    filter: drop-shadow(2px 4px 5px black);
+  }
+
+  .btn {
+    margin: 10px 0;
+  }
+}
+.isActive {
+  transform: scale(1.1);
+  background-color: goldenrod;
+  filter: grayscale(5) drop-shadow(3px 4px 5px black);
+}

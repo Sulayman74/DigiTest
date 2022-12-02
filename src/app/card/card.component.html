@@ -1,0 +1,51 @@
+<section class="card" [ngClass]="{ isActive: isActive }">
+  <!-- le premier 'isActive' fait référence à ma classe SCSS et l'autre à ma variable -->
+
+  <div id="infos">
+    <span> {{ dataUSer.id }} </span>
+
+    <div>{{ dataUSer.first_name }}</div>
+    <div>{{ dataUSer.last_name }}</div>
+
+    <div id="age">
+      <span> {{ dataUSer.email }} </span>
+    </div>
+  </div>
+  <div class="image">
+    <img
+      id="image"
+      [ngStyle]="{
+        transform: !isActive ? 'rotateY(360deg)' : 'translateX(100px)'
+      }"
+      [src]="dataUSer.avatar"
+      alt="image de spider-man"
+    />
+  </div>
+
+  <!-- <div>{{ data | json }}</div> -->
+  <!-- pour debugger voir mon objet -->
+  <button
+    class="btn"
+    mat-raised-button
+    color="primary"
+    type="button"
+    align="start"
+    (click)="onClick()"
+  >
+    OK
+  </button>
+</section>
+
+<!-- <section>
+  <div class="container_card">
+    <span class="infos">
+      <p>Nom : {{ name }}</p>
+      <p>Prénom : {{ firstname }}</p>
+      <p>Ville : {{ city }}</p>
+      <p>Age : {{ age }}</p>
+    </span>
+    <span class="image">
+      <img [src]="imageUrl" alt="" class="profile" />
+    </span>
+  </div>
+</section> -->

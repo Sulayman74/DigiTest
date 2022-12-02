@@ -1,0 +1,23 @@
+body {
+  display: flex;
+  width: 100vw;
+  justify-content: flex-start;
+}
+body .main-container {
+  padding: 10px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.555);
+  width: 100%;
+}
+body .main-container img {
+  height: 500px;
+  border-radius: 5px;
+  border: 1px solid saddlebrown;
+  filter: drop-shadow(2px 5px 1px black);
+}
+body .font-size {
+  font-size: 2em;
+}/*# sourceMappingURL=main-content.component.css.map */

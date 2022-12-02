@@ -1,0 +1,11 @@
+<section class="container">
+  <div *ngIf="data.data">
+    <div *ngFor="let user of data.data">
+      <mat-card>
+        <img mat-card-avatar [src]="user.avatar" alt="" />
+        <p>{{ user.first_name }}</p>
+        <p>{{ user.last_name }}</p>
+      </mat-card>
+    </div>
+  </div>
+</section>
