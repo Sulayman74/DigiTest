@@ -1,4 +1,23 @@
-# DigiTest
+# DigiTest!
+
+Voici un dépôt de la toute première heure avec Angular 14!!!
+Le formateur expert Angular Mohammed Kanouté nous a accompagné pendant un mois et demi.
+
+# Demarrage
+
+  
+## Créer une application Angular CLI 
+- Cet article explique comment créer une application Angular CLI à l'aide de la ligne de commande. 
+- Prérequis  Avant de pouvoir créer une application Angular CLI, vous devez installer les outils suivants sur votre ordinateur :  
+* [Node.js](https://nodejs.org/en/)  
+* [Angular CLI](https://cli.angular.io/)  
+*  Créer une application  Une fois que les prérequis sont installés, vous pouvez créer une application Angular CLI en utilisant la ligne de commande. 
+* 1. Ouvrez un terminal et rendez-vous à l'emplacement où vous souhaitez créer le projet. 
+* 2. Exécutez la commande `ng new` pour créer un nouveau projet :  ```bash  ng new my-app  ``` 
+* 3. Une fois que le projet est créé, vous pouvez lancer la commande suivante pour démarrer l'application :  ```bash  ng serve --open  ``` 
+* 4. Vous pouvez maintenant ouvrir votre navigateur et accéder à l'application à l'adresse `http://localhost:4200`.  
+
+
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.4.
