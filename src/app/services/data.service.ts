@@ -1,4 +1,4 @@
-import { Observable, Subject } from "rxjs";
+import { Observable, Subject, map, tap } from "rxjs";
 
 import { HttpClient } from '@angular/common/http';
 import { Injectable, } from '@angular/core';
@@ -10,11 +10,16 @@ export class DataService {
 
   countriesURL = "https://restcountries.com/v3.1/all"
   url = 'https://reqres.in/api/users?page=2'
-  salatApi = " http://api.aladhan.com/v1/calendarByCity?city=London&country=United Kingdom&method=2&month=11&year=2022";
+  salatApi = " http://api.aladhan.com/v1/calendarByCity/2023/3?city=Bonneville&country=France&method=99&methodSettings=16.5,null,90mins";
 
+  apiHadith = 'https://api.hadith.gading.dev/books/muslim/'
+
+
+  quranApi = 'http://api.alquran.cloud/v1/ayah/'
   isOver: boolean = true
   dataToSend$ = new Subject<boolean>(); // c'est une observable
   // ? dataAnnounced$ = this.dataToSend.asObservable();
+
 
 
 
@@ -25,7 +30,15 @@ export class DataService {
   sendData(data: boolean): void {
     this.dataToSend$.next(this.isOver)
   }
-
+  getAyah(): Observable<any> {
+    let numero = Math.floor(Math.random() * 6236);
+    console.log(numero);
+    return this._http.get(this.quranApi + numero)
+  }
+  getHadith(): Observable<any> {
+    let numero = Math.floor(Math.random() * 500);
+    return this._http.get(this.apiHadith + numero)
+  }
   getSalat(): Observable<any> {
     return this._http.get(this.salatApi)
   }

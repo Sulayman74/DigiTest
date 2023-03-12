@@ -1,6 +1,7 @@
 <section class="container-fluid">
-  <p>navbar works!</p>
-  <div>
-    {{ arrayNbr }}
-  </div>
+  <button mat-raised-button color="primary" (click)="getHadith()">
+    Clique pour lire un Hadith
+  </button>
+  <p class="titre">Hadith</p>
+  <p id="hadith" *ngIf="hadith">{{ hadith }}</p>
 </section>

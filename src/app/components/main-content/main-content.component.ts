@@ -1,10 +1,8 @@
-
 import { Component, OnInit, } from '@angular/core';
+import { Subject, map, tap } from "rxjs";
+
 import { DataService } from 'src/app/services/data.service';
 import { UserService } from 'src/app/services/user.service';
-import { Subject } from "rxjs";
-
-
 
 @Component({
   selector: 'app-main-content',
@@ -26,8 +24,7 @@ export class MainContentComponent implements OnInit {
   numbers = [3, 6, 9, 15, 27, 2]
   tableauTest = [1, 2, 3]
 
-
-
+  ayah!: string
 
 
   tableauMohammed = [
@@ -75,7 +72,12 @@ export class MainContentComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.dataService.getData().subscribe((value: any) => { this.dataAPI = value.data; console.log(value.data); })
+
+    this.dataService.getAyah().pipe(tap(value => console.log(value.data.text))).subscribe((ayah: any) => {
+      this.ayah = ayah.data.text
+    })
+
+    this.dataService.getData().subscribe((value: any) => { this.dataAPI = value.data; })
     this.user.getSingleUser().subscribe((user: any) => this.dataUser = user.data)
 
   }

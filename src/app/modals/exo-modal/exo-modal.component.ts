@@ -2,7 +2,8 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { WeatherService } from 'src/app/services/weather.service';
-import { switchMap, take } from 'rxjs/operators';
+import { mergeMap, switchMap, take } from 'rxjs/operators';
+import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-exo-modal',
@@ -33,6 +34,7 @@ export class ExoModalComponent implements OnInit {
   }
 
 
+
   onSubmit() {
     const formDatas = this.formModal.value
     this._datas.getLocation(formDatas.rue, formDatas.codePostale, formDatas.ville).pipe(take(1), switchMap((responseFromServerGPS: any) => {
@@ -41,23 +43,25 @@ export class ExoModalComponent implements OnInit {
         longitude: responseFromServerGPS.features[0].geometry.coordinates[1]
       };
 
-      return this._datas.getMeteo(dataGps.longitude, dataGps.latitude)
+      return this._datas.getMeteo(dataGps.latitude, dataGps.longitude)
     })).subscribe((responseFromWeatherServer: any) => {
       let now = new Date();
       let heure = now.getHours();
+      console.log("exo modal reponse weather", responseFromWeatherServer);
 
-      responseFromWeatherServer.hourly.temperature_2m[heure],
-        responseFromWeatherServer.hourly.time[heure]
-      this._donnees.close({
+      this._dialogRef.close({
         temperature: responseFromWeatherServer.hourly.temperature_2m[heure],
         rue: formDatas.rue,
         codePostale: formDatas.codePostale,
         ville: formDatas.ville
+
       })
+
 
       this.show = true
     })
   }
+
 
 
 }

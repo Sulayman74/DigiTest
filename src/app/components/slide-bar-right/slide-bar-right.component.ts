@@ -9,16 +9,15 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class SlideBarRightComponent implements OnInit {
 
-  constructor(private _salatService: DataService) { }
+  constructor() { }
+
 
   ngOnInit(): void {
-    
-    this._salatService.getSalat().subscribe((value: any) => {
-      console.warn(value, "test");
 
-    })
 
   }
 
-
 }
+
+
+

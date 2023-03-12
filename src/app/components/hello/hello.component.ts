@@ -26,13 +26,11 @@ export class HelloComponent implements OnInit {
   ngOnInit(): void {
     this.dataService.dataToSend$.subscribe((value: boolean) => this.isOverComponent = value)
     this.dataService.getData().subscribe((user: any) => {
-      console.log("user", user);
       this.users = user
     })
   }
   getData(myEvent: any) {
     this.monPost = myEvent
-    console.log(myEvent);
   }
 
   onClick() {

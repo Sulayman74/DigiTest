@@ -21,10 +21,7 @@ export class WeatherService {
       { params: parameters })
   }
   getMeteo(longitude: number, latitude: number): Observable<any> {
-    const parametres = new HttpParams()
-      .append("latitude", latitude)
-      .append("longitude", longitude)
-      .append('temperature', 'temperature_2m')
+    const parametres = new HttpParams().append("latitude", latitude).append("longitude", longitude).append('hourly', 'temperature_2m').append('timezone', 'Europe/Berlin')
     return this._http.get(this.urlMeteo,
       { params: parametres });
   }

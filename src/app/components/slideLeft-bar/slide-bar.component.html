@@ -1,3 +1,19 @@
+<section class="container-fluid">
+  <div *ngIf="prayers" class="salat">
+    <h1>Les Horaires de Prières</h1>
+    <h2>{{ today | date : "d MMMM yyyy" }}</h2>
+    <h2>{{ hijri }}</h2>
+    <h3>
+      <p>{{ hijriDay }} {{ arabicMonth }} {{ arabicDay }}</p>
+    </h3>
+    <p>Fajr : {{ prayers.Fajr }}</p>
+    <p>Dhor : {{ prayers.Dhuhr }}</p>
+    <p>Asr : {{ prayers.Asr }}</p>
+    <p>Margheb : {{ prayers.Maghrib }}</p>
+    <p>Isha : {{ prayers.Isha }}</p>
+  </div>
+</section>
+
 <form action="" [formGroup]="userForm">
   <mat-form-field>
     <input

@@ -1,8 +1,16 @@
 .container-fluid {
-  background-color: darkkhaki;
-  height: 100vh;
   width: 100%;
-  p {
-    color: azure;
+  height: 100%;
+  background-color: bisque;
+  .salat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    p {
+      background-color: pink;
+      padding: 7px 5px;
+      border-radius: 5px;
+    }
   }
 }

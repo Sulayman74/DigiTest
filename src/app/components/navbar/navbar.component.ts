@@ -1,4 +1,5 @@
-import { Component, Injectable, OnInit, Input } from '@angular/core';
+import { Component, Injectable, Input, OnInit } from '@angular/core';
+
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -9,8 +10,8 @@ import { DataService } from 'src/app/services/data.service';
 export class NavbarComponent implements OnInit {
 
   @Input() arrayNbr!: number
-
-  constructor() {
+  hadith!: any
+  constructor(private dataService: DataService) {
 
   }
 
@@ -20,5 +21,7 @@ export class NavbarComponent implements OnInit {
 
 
   }
-
+  getHadith() {
+    this.dataService.getHadith().subscribe((values: any) => this.hadith = values.data.contents.arab)
+  }
 }

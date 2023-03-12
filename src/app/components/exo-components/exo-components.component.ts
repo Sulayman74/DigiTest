@@ -46,7 +46,7 @@ export class ExoComponentsComponent implements OnInit {
     );
     dialog.afterClosed()
       .subscribe((responseFromModal: any) => {
-        console.warn('response de la modal lors de la cloture ', responseFromModal);
+        console.log("meteo reponse", responseFromModal);
         this.meteo = responseFromModal
 
       })
