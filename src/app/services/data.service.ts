@@ -8,9 +8,15 @@ import { Injectable, } from '@angular/core';
 })
 export class DataService {
 
+  now = new Date()
+  year = this.now.getFullYear()
+
+  month = this.now.getMonth() + 1
+
+
   countriesURL = "https://restcountries.com/v3.1/all"
   url = 'https://reqres.in/api/users?page=2'
-  salatApi = " http://api.aladhan.com/v1/calendarByCity/2023/3?city=Bonneville&country=France&method=99&methodSettings=16.5,null,90mins";
+  salatApi = `http://api.aladhan.com/v1/calendarByCity/${this.year}/${this.month}?city=Bonneville&country=France&method=99&methodSettings=16.5,null,90mins`;
 
   apiHadith = 'https://api.hadith.gading.dev/books/muslim/'
 

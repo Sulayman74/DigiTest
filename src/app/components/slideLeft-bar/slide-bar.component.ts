@@ -34,9 +34,12 @@ export class SlideBarComponent implements OnInit {
 
 
     let now = new Date()
+    let year = now.getFullYear()
+    console.log("année", year);
     let ajd = now.getDate() - 1
-    console.log(ajd); this._salatService.getSalat().subscribe((value: any) => {
-      console.log("objet avec horaires", value);
+    console.log(ajd);
+    this._salatService.getSalat().subscribe((value: any) => {
+      console.log("objet avec horaires", value.data);
       this.prayers = value.data[ajd].timings
       // console.log(this.prayers);
       this.hijri = value.data[ajd].date.hijri.date
